@@ -4,11 +4,11 @@
     <title>{%block title%}{%endblock%} | {% trans "Home Automation" %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      {% compress css %}
-    <link href="/static/css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet">
-    <link href="/static/custom-bootstrap/css/bootstrap.min.css" rel="stylesheet">
-   <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/static/jquery-ui-1.10.2/css/ui-lightness/jquery-ui-1.10.2.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+   <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <!--[if IE 6]>
-      <link href="ie6.min.css" rel="stylesheet">
+      <link href="/static/css/ie6.min.css" rel="stylesheet">
     <![endif]-->
     {%block head_css%}{%endblock%}
     {%endcompress%}
@@ -16,11 +16,13 @@
   <body>
     {%block content%}{%endblock%}
     {%compress js%}
-    <script src="/static/js/jquery-1.9.1.js"></script>
-    <script src="/static/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="/static/custom-bootstrap/js/bootstrap.js"></script>
+    <script src="/static/jquery-ui-1.10.2/js/jquery-1.9.1.js"></script>
+    <script src="/static/jquery-ui-1.10.2/js/jquery-ui-1.10.2.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.js"></script>
     <script src="/static/js/jquery.validate.min.js"></script>
-    <script src="/static/js/jquery.form.js"></script>
+    <!--[if IE 6]>
+    <script src="/static/js/ie6.min.js"></script>
+    <![endif]-->
     {%block load_script%}{%endblock%}
     <script src="/static/js/utils.js"></script>
      {%endcompress%}
@@ -31,9 +33,7 @@
          validation();
          $("[title!=undefined]").tooltip({"animation": "true"})
       });
-    </script>
 
-<script>
     $(function(){if($.browser.msie&&parseInt($.browser.version,10)===6){$('.row div[class^="span"]:last-child').addClass("last-child");$('[class*="span"]').addClass("margin-left-20");$(':button[class="btn"], :reset[class="btn"], :submit[class="btn"], input[type="button"]').addClass("button-reset");$(":checkbox").addClass("input-checkbox");$('[class^="icon-"], [class*=" icon-"]').addClass("icon-sprite");$(".pagination li:first-child a").addClass("pagination-first-child")}})
 </script>
 

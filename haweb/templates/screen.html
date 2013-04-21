@@ -1,1 +1,26 @@
 {%extends 'base.html'%}
+{%load i18n%}{%load controls%}
+{%block title%}{%trans screen.title%}{%endblock%}
+{%block head_css%}{%endblock%}
+{%block content%}
+<center>
+<div class="row-fluid">
+    <div class="span12 page-header"><h2>{%trans screen.title%}</h2></div>
+    <div class="span12" id="progress"></div>
+    <div class="span12">
+{%for control in screen.controls%}
+<div class="row-fluid">
+    <div class="span6 lead"><p class="pull-right">{%trans control.caption%}</p></div>
+    <div class="span6">
+        {%control control%}
+    </div>
+</div>
+{%endfor%}
+</div></div>
+</center>
+{%endblock%}
+{%block load_script%}{%endblock%}
+{%block script%}
+{%include 'ha_cmds.js'%}
+{%endblock%}
+{%block document_ready%}{%endblock%}

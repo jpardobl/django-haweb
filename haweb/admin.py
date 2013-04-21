@@ -10,3 +10,8 @@ admin.site.register(Screen, ScreenAdmin)
 class ControlAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Control, ControlAdmin)
+
+
+class ScreenControlsAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(ScreenControls, ScreenControlsAdmin)
