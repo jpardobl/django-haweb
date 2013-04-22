@@ -5,18 +5,22 @@
 {%block content%}
 <center>
 <div class="row-fluid">
-    <div class="span12 page-header"><h2>{%trans screen.title%}</h2></div>
-    <div class="span12" id="progress"></div>
-    <div class="span12">
-{%for control in screen.controls%}
-<div class="row-fluid">
-    <div class="span6 lead"><p class="pull-right">{%trans control.caption%}</p></div>
-    <div class="span6">
-        {%control control%}
+    <div class="span4 offset4"><h2>{%trans screen.title%}</h2></div>
+    <div class="span4" id="menu"></div>
+    <div class="span10 offset2">
+        <div class="row-fluid">
+            <div class="span12"></div>
+            {%for control in screen.controls%}
+            <div class="span4 hacontrol">
+                <div class="row-fluid">
+                    <div class="span12">{%trans control.caption%}</div>
+                    <div class="span12">{%control control%}</div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
     </div>
 </div>
-{%endfor%}
-</div></div>
 </center>
 {%endblock%}
 {%block load_script%}{%endblock%}
