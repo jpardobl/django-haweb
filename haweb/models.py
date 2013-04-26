@@ -53,8 +53,8 @@ class Control(models.Model):
 
         except haclient.RestApiException, err:
             if err.status_code == 409:
-                raise IntegrityError(err.message)
-            raise err
+                raise IntegrityError(err)
+            raise
 
     def delete(self, *args, **kwargs):
 
@@ -94,6 +94,16 @@ class ScreenControls(models.Model):
     screen = models.ForeignKey(Screen)
     control = models.ForeignKey(Control)
     order = models.IntegerField()
+
+    def __unicode__(self):
+        return u"%s(%s)" % (self.control, self.order)
+
+    def save(self, *args, **kwargs):
+        if self.id is None and self.order is None:
+            self.order = ScreenControls.objects.filter(screen=self.screen).count() + 1
+
+        return super(ScreenControls, self).save(*args, **kwargs)
+
 
     class Meta:
         ordering = ["order", ]

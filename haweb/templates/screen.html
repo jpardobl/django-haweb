@@ -5,26 +5,51 @@
 {%block content%}
 <center>
 <div class="row-fluid">
-    <div class="span4 offset4"><h2>{%trans screen.title%}</h2></div>
-    <div class="span4" id="menu"></div>
-    <div class="span10 offset2">
+    <div class="span4" id="menu">
+
+    </div>
+    <div class="span8"><h2 class="page-header">{%trans screen.title%}</h2></div>
+    <div class="span11">
         <div class="row-fluid">
-            <div class="span12"></div>
-            {%for control in screen.controls%}
-            <div class="span4 hacontrol">
-                <div class="row-fluid">
-                    <div class="span12">{%trans control.caption%}</div>
-                    <div class="span12">{%control control%}</div>
+            <div class="span4" id="izq">
+                <button type="button" onclick="toggle_edit()" class="btn btn-info" id="edit" class="btn btn-primary">{%trans "Edit"%}</button>
+            </div>
+            <div class="span8">
+                <div id="sortable" class="row-fluid">
+                {%for scontrol in scontrols%}
+                    <div class="span4" id="{{scontrol.control.did}}">
+                        <div class="hacontrol habox">
+                            <div class="row-fluid">
+                                <div class="span12 clabel" i="{{scontrol.control.did}}" p="{{scontrol.control.protocol}}">{%trans scontrol.control.caption%}</div>
+                                <div class="span12">{%control scontrol.control%}</div>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
                 </div>
             </div>
-            {%endfor%}
         </div>
     </div>
+
+
 </div>
 </center>
 {%endblock%}
 {%block load_script%}{%endblock%}
 {%block script%}
 {%include 'ha_cmds.js'%}
+{%include 'editable.js'%}
+refresh();
 {%endblock%}
-{%block document_ready%}{%endblock%}
+{%block document_ready%}
+
+    $("#sortable").sortable({
+        stop: function(e, ui){
+            var sids = $( "#sortable" ).sortable( "toArray" );
+            console.log(sids)
+            new_ordering("{{screen.slug}}", sids)
+        }
+    });
+    $( "#sortable" ).disableSelection();
+
+{%endblock%}

@@ -1,0 +1,13 @@
+{%load i18n%}<form action="{%url 'control_by_id'%}" id="form_new">
+{% for field in form %}
+    <div class="control-group{%if field.errors%} error{%endif%}">
+        <label class="control-label" for="{{field.name}}">{{field.label}}</label>
+        <div class="controls" >
+
+         {{ field }}
+          {%for err in field.errors%}<span class="help-inline">{{err}}</span>{%endfor%}
+    </div></div>
+{% endfor %}
+<input type="hidden" name="screen" value="{{screen.slug}}">
+<button type="button" class="btn btn-info" onclick="add_control()">{%trans "Accept"%}</button>
+</form>

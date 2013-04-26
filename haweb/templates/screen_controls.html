@@ -1,0 +1,11 @@
+{%load i18n%}{%load controls%}
+{%for scontrol in scontrols%}
+    <div class="span4" id="{{scontrol.control.did}}">
+        <div class="hacontrol habox">
+            <div class="row-fluid">
+                <div class="span12 clabel" i="{{scontrol.control.did}}" p="{{scontrol.control.protocol}}">{%trans scontrol.control.caption%}</div>
+                <div class="span12">{%control scontrol.control%}</div>
+            </div>
+        </div>
+    </div>
+{%endfor%}

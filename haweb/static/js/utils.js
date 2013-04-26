@@ -19,7 +19,6 @@ function doload_dom_css(url, id){
 	delete d, c;
 }
 
-
 function load_dom_script_once(url, css){
 
 
@@ -46,8 +45,6 @@ function init_progress(){
 }
 
 function progress(p){
-
-
     $("#progress").css( "width", p + "%")
 }
 
@@ -64,6 +61,7 @@ function show_msg(msg, type){
     $("#avisos").remove()
     z.append("<div style='display:none' class='alert alert-"+type+"' id='avisos'><button type='button' class='close' data-dismiss='alert'>&times;</button>" + msg + "</div>")
     $("#avisos").fadeToggle('slow')
+    $("#avisos").addClass("span12")
     $('#avisos').bind('closed', function () {
             $("#avisos").remove()
         })
