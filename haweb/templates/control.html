@@ -1,16 +1,16 @@
 {%load i18n%}
 {%if control.control_type == "dimmer"%}
 <div class="btn-group">
-  <button type="button" id="up_{{control.did}}" onclick="pl_bri('{{control.protocol}}', '{{control.did}}', 20)" class="btn btn-primary">{%trans "UP"%}</button>
-  <button type="button" id="dw_{{control.did}}" onclick="pl_dim('{{control.protocol}}', '{{control.did}}', 20)" class="btn btn-primary">{%trans "DOWN"%}</button>
+  <button type="button" id="up_{{control.did}}" onclick="pl_bri('{{control.protocol}}', '{{control.did}}', 20)" class="btn btn-primary">{%trans "Up"%}</button>
+  <button type="button" id="dw_{{control.did}}" onclick="pl_dim('{{control.protocol}}', '{{control.did}}', 20)" class="btn btn-primary">{%trans "Down"%}</button>
 </div>
 {%else%}
   <div class="btn-group">
-  <button type="button" id="up_{{control.did}}" class="btn btn-primary disabled">{%trans "UP"%}</button>
-  <button type="button" id="dw_{{control.did}}" class="btn btn-primary disabled">{%trans "DOWN"%}</button>
+  <button type="button" id="up_{{control.did}}" class="btn btn-primary disabled">{%trans "Up"%}</button>
+  <button type="button" id="dw_{{control.did}}" class="btn btn-primary disabled">{%trans "Down"%}</button>
 </div>
 {%endif%}
 <div class="btn-group" data-toggle="buttons-radio">
-  <button type="button" id="on_{{control.did}}" onclick="pl_switch('{{control.protocol}}', '{{control.did}}', 'on')" class="btn btn-primary">{%trans "ON"%}</button>
-  <button type="button" id="off_{{control.did}}" onclick="pl_switch('{{control.protocol}}', '{{control.did}}', 'off')" class="btn btn-primary">{%trans "OFF"%}</button>
+  <button type="button" id="on_{{control.did}}" onclick="pl_switch('{{control.protocol}}', '{{control.did}}', 'on')" class="btn btn-primary">{%trans "On"%}</button>
+  <button type="button" id="off_{{control.did}}" onclick="pl_switch('{{control.protocol}}', '{{control.did}}', 'off')" class="btn btn-primary">{%trans "Off"%}</button>
 </div>

@@ -7653,3 +7653,6 @@ a.badge:hover {
 #menu {
   padding-top: 15px;
 }
+.pie {
+  font-size: -5;
+}

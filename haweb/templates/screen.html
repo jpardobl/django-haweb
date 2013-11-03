@@ -5,15 +5,15 @@
 {%block content%}
 <center>
 <div class="row-fluid">
-    <div class="span4" id="menu">
-
-    </div>
-    <div class="span8"><h2 class="page-header">{%trans screen.title%}</h2></div>
+    <div class="span4" id="menu"></div>
+    <div class="span8"><h2 class="page-header">{%trans screen.title%}
+    <button type="button" onclick="toggle_edit()" class="btn " id="edit" class="btn btn-primary">{%trans "Edit"%}</button>
+    
+    </h2>
+            </div>
     <div class="span11">
         <div class="row-fluid">
-            <div class="span4" id="izq">
-                <button type="button" onclick="toggle_edit()" class="btn btn-info" id="edit" class="btn btn-primary">{%trans "Edit"%}</button>
-            </div>
+            <div class="span4" id="izq"></div>
             <div class="span8">
                 <div id="sortable" class="row-fluid">
                 {%for scontrol in scontrols%}
@@ -30,10 +30,12 @@
             </div>
         </div>
     </div>
-
-
 </div>
 </center>
+<div class="navbar navbar-fixed-bottom pie">
+
+      Home Automation Python Project - jpardobl.com
+    </div>
 {%endblock%}
 {%block load_script%}{%endblock%}
 {%block script%}

@@ -12,6 +12,8 @@ function toggle_del_btn(){
     e.html("<i class='icon-minus-sign icon-white pull-right'></i>")
     e.addClass("del_btn")
     $(".clabel").append(e)
+
+
     delete e;
 }
 

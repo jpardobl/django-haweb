@@ -22,6 +22,7 @@ def screen_controls(request, slug):
          "scontrols": scontrols}
     )
 
+
 @csrf_exempt
 def screen(request, slug):
     if request.method == "GET":

@@ -8,11 +8,14 @@ from django.db import IntegrityError
 class RestApiException(Exception):
     pass
 
+try:
+    PROTOCOL_CHOICES = [(x, x) for x in haclient.get_protocols(
+        settings.HA_SERVER,
+        settings.HA_USERNAME,
+        settings.HA_PASSWORD,)]
+except Exception:
+    PROTOCOL_CHOICES = ()
 
-PROTOCOL_CHOICES = [(x, x) for x in haclient.get_protocols(
-    settings.HA_SERVER,
-    settings.HA_USERNAME,
-    settings.HA_PASSWORD,)]
 
 
 class Control(models.Model):

@@ -1,5 +1,5 @@
 function pl_switch(prot, did, value){
-    send_url("{%url 'pl_switch' %}" + prot + "/" + did + "/" + value, function(){alert("hecho")})
+    send_url("{%url 'pl_switch' %}" + prot + "/" + did + "/" + value, function(){})
 }
 
 function pl_dim(prot, did, value){

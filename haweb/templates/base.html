@@ -17,6 +17,9 @@
   <body>
     {%block content%}{%endblock%}
     {%compress js%}
+    <script src="/static/js/sockjs-0.3.4.min.js"></script>
+    <script src="/static/js/jsfsm-0.6.0.js"></script>
+    <script src="/static/js/cliente.js"></script>
     <script src="/static/jquery-ui-1.10.2/js/jquery-1.9.1.js"></script>
     <script src="/static/jquery-ui-1.10.2/js/jquery-ui-1.10.2.js"></script>
     <script src="/static/bootstrap/js/bootstrap.js"></script>
@@ -31,6 +34,37 @@
       {%block script%}{%endblock%}
       $(document).ready(function() {
           {%block document_ready%}{%endblock%}
+
+
+    SMachine.set_machine_trace(false);  // global trace
+    console.log("STARTING cliente GAPLIC");
+    gaplic = new GAplic('', 'hautomation');
+    gaplic.send_event(
+        gaplic.router,
+        'EV_ADD_STATIC_ROUTE',
+        {
+            name: '',
+            roles: ['hautomation'],
+            urls: [
+                'ws://localhost:8002',
+                ],
+        }
+    );
+
+
+        // Wait to dom is loaded.
+        var cliente_options = {
+        };
+        cliente = gaplic.create_gobj(
+            '',
+            Cliente,
+            gaplic,
+            cliente_options
+        );
+        cliente.set_machine_trace(true);
+
+
+
          validation();
          $("[title!=undefined]").tooltip({"animation": "true"})
       });
