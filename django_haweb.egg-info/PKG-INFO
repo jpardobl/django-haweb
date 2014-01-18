@@ -1,13 +1,28 @@
 Metadata-Version: 1.1
 Name: django-haweb
-Version: 0.1
+Version: 0.1.1
 Summary: A Django app which shows a web front for django-hautomation
-Home-page: http://www.example.com/
+Home-page: http://blog.digitalhigh.es
 Author: Javier Pardo Blasco(jpardobl)
 Author-email: jpardo@digitalhigh.es
 License: BSD License
 Description: 
+        django-haweb
+        ==================
         
+        Django app meant to serve a frontend to enable users to issue Domotic commands to
+        any server running django_hautomation module.
+        
+        This module providesm, through a web interface, an easy way issue domotic commands, as well as
+        create custom domotic dashboards. Each dashboard has a set of domotic controls to which user 
+        can issue domotic commands.
+        
+        The module belongs to the Home Automation Python Project, you can find further documentation about 
+        it here http://blog.digitalhigh.es/home-automation-python-project/
+        
+        Also on this link there is documentation about this module:
+        
+        http://blog.digitalhigh.es/home-automation-python-project/django-haweb/
 Platform: UNKNOWN
 Classifier: Environment :: Web Environment
 Classifier: Framework :: Django
@@ -19,3 +34,4 @@ Classifier: Programming Language :: Python :: 2.6
 Classifier: Programming Language :: Python :: 2.7
 Classifier: Topic :: Internet :: WWW/HTTP
 Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Home Automation

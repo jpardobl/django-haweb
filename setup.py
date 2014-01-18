@@ -8,14 +8,14 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name = 'django-haweb',
-    version = '0.1',
+    version = '0.1.1',
     packages = ['haweb'],
     include_package_data = True,
     license = 'BSD License',
     description = 'A Django app which shows a web front for django-hautomation',
     long_description = README,
 #TODO set the project's home page
-    url = 'http://www.example.com/',
+    url = 'http://blog.digitalhigh.es',
     author = 'Javier Pardo Blasco(jpardobl)',
     author_email = 'jpardo@digitalhigh.es',
     extras_require = {
@@ -25,7 +25,7 @@ setup(
       "Django==1.5",
       "simplejson==2.6.2",
       "django-compressor==1.3",
-
+      "hautomation_restclient",
     ),
    # test_suite='test_project.tests.runtests',
    # tests_require=("selenium", "requests"),
@@ -40,5 +40,6 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        'Topic :: Home Automation',
     ],
 )
