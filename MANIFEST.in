@@ -1,3 +1,6 @@
 include LICENSE
 include README.md
-recursive-include hautomation_x10/docs *
+recursive-include haweb/locale *
+recursive-include haweb/static *
+recursive-include haweb/templates *
+recursive-include haweb/templatetags *
