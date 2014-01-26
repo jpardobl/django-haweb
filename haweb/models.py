@@ -51,11 +51,12 @@ class Control(models.Model):
                     settings.HA_USERNAME,
                     settings.HA_PASSWORD,
                 )
-
             return super(Control, self).save(*args, **kwargs)
+            
 
         except haclient.RestApiException, err:
             if err.status_code == 409:
+                return super(Control, self).save(*args, **kwargs)
                 raise IntegrityError(err)
             raise
 
