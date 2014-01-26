@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: django-haweb
-Version: 0.1.2
+Version: 0.2.1
 Summary: A Django app which shows a web front for django-hautomation
 Home-page: http://blog.digitalhigh.es
 Author: Javier Pardo Blasco(jpardobl)
