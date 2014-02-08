@@ -15,6 +15,7 @@ haweb/tests.py
 haweb/urls.py
 haweb/views.py
 haweb/locale/es/LC_MESSAGES/django.po
+haweb/management/__init__.py
 haweb/management/commands/__init__.py
 haweb/management/commands/import_devices.py
 haweb/static/bootstrap-2.3.0-wip/.travis.yml
