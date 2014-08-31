@@ -238,11 +238,8 @@ haweb/static/jquery-ui-1.10.2/css/ui-lightness/images/ui-icons_ffffff_256x240.pn
 haweb/static/jquery-ui-1.10.2/js/jquery-1.9.1.js
 haweb/static/jquery-ui-1.10.2/js/jquery-ui-1.10.2.js
 haweb/static/jquery-ui-1.10.2/js/jquery-ui-1.10.2.min.js
-haweb/static/js/cliente.js
 haweb/static/js/ie6.min.js
 haweb/static/js/jquery.validate.min.js
-haweb/static/js/jsfsm-0.6.0.js
-haweb/static/js/sockjs-0.3.4.min.js
 haweb/static/js/utils.js
 haweb/templates/base.html
 haweb/templates/control.html
@@ -252,4 +249,5 @@ haweb/templates/ha_cmds.js
 haweb/templates/screen.html
 haweb/templates/screen_controls.html
 haweb/templatetags/__init__.py
+haweb/templatetags/__init__.pyc
 haweb/templatetags/controls.py
